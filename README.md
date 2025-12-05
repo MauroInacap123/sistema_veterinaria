@@ -105,4 +105,5 @@ Funciones adicionales:
 
 **Mauricio Bustamante**  
 Estudiante de Ingeniería en Informática  
-INACAP Renca - 2024
+INACAP Renca - 2025
+
