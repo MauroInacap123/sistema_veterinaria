@@ -1,0 +1,8 @@
+# Dependencias del Sistema de Gestión Veterinaria
+# Instalar con: pip install -r requirements.txt
+
+# Librería para conectar con Oracle Database
+oracledb==2.0.1
+
+# Librería para manejar variables de entorno
+python-dotenv==1.0.0

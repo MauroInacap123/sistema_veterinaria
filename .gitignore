@@ -1,0 +1,27 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+venv/
+ENV/
+env/
+*.egg-info/
+
+# Variables de entorno
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Oracle
+*.log
+*.trc
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

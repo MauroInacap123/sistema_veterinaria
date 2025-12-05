@@ -1,0 +1,89 @@
+@startuml Sistema_Veterinaria
+
+' Clase Cliente
+class Cliente {
+  - id_cliente: int
+  - rut: str
+  - nombres: str
+  - apellidos: str
+  - telefono: str
+  - email: str
+  - direccion: str
+  + __init__(id_cliente, rut, nombres, apellidos, telefono, email, direccion)
+  + __str__(): str
+  + obtener_nombre_completo(): str
+}
+
+' Clase Mascota
+class Mascota {
+  - id_mascota: int
+  - nombre: str
+  - especie: str
+  - raza: str
+  - edad: int
+  - color: str
+  - peso: float
+  - id_cliente: int
+  + __init__(id_mascota, nombre, especie, raza, edad, color, peso, id_cliente)
+  + __str__(): str
+  + es_cachorro(): bool
+  + es_senior(): bool
+}
+
+' Clase Veterinario
+class Veterinario {
+  - id_veterinario: int
+  - nombres: str
+  - apellidos: str
+  - especialidad: str
+  - telefono: str
+  - email: str
+  - licencia: str
+  + __init__(id_veterinario, nombres, apellidos, especialidad, telefono, email, licencia)
+  + __str__(): str
+  + obtener_nombre_completo(): str
+  + esta_disponible(): bool
+}
+
+' Clase Cita
+class Cita {
+  - id_cita: int
+  - id_mascota: int
+  - id_veterinario: int
+  - fecha: date
+  - hora: str
+  - motivo: str
+  - estado: str
+  - observaciones: str
+  + __init__(id_cita, id_mascota, id_veterinario, fecha, hora, motivo, estado, observaciones)
+  + __str__(): str
+  + esta_confirmada(): bool
+  + puede_cancelar(): bool
+}
+
+' Relaciones
+Cliente "1" -- "*" Mascota : tiene >
+Mascota "1" -- "*" Cita : asiste a >
+Veterinario "1" -- "*" Cita : atiende >
+
+note right of Cliente
+  Dueño de las mascotas
+  (similar a Departamento)
+end note
+
+note right of Mascota
+  Paciente de la veterinaria
+  (similar a Empleado)
+end note
+
+note right of Veterinario
+  Doctor que atiende
+  (similar a Proyecto)
+end note
+
+note right of Cita
+  Consulta médica
+  (similar a RegistroTiempo)
+end note
+
+@enduml
